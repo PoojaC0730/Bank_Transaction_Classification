@@ -1,10 +1,12 @@
 # Bank_Transaction_Classification
 Bank_Transaction_Classification
 
-#Project Overview
+# Project Overview 
+
 This project involves classifying bank transactions into predefined ledger tags using machine learning. The key tasks include data preprocessing, feature engineering, model training, evaluation, and prediction for unseen transactions. The best model is saved and can be reused for classifying future transactions.
 
-##How to Run the Code
+## How to Run the Code
+
 •  Dependencies:
 •	Python 3.8+
 •	pandas
@@ -19,7 +21,7 @@ o	Data Preparation and Cleaning : Run the Data_Cleaning.ipynb file with “bank.
 o	Feature Engineering and Model Training and Saving: Run the “Feature Engineering and Model Fitting and Evaluations.ipynb” script to train models on the provided clean and tagged dataset. As the dataset is manually tagged, use the “tagged_cleandata.csv” file and save the best-performing model.
 o	Prediction on New Data: Use the saved model to classify new transactions by running the Predict_LedgerTags.ipynb file on the unclean and raw data “bank_lastquarter.xlsx”
 
-##Project Workflow
+## Project Workflow
 1.	Data Preprocessing:
 o	Cleaning missing values.
 o	Removing irrelevant columns.
@@ -35,14 +37,14 @@ o	Saving the best model, TF-IDF vectorizer, and label encoder for future use.
 6.	Prediction:
 o	Classifying new transactions using the saved model.
 
-##Data Documentation
-###Data Preprocessing
+## Data Documentation
+### Data Preprocessing
 •	Removed unnecessary columns that were not affecting the ledger tags (category) of a given transaction. 
 •	Cleaned up rows with null values for transaction details. 
 •	Filled null values in Amount related columns with 0. 
 •	Converted date column into proper format. 
 
-###Data Transformation
+### Data Transformation
 •	Used TF-IDF Vectorizer to convert TRANSACTION DETAILS into numerical features.
 o	Parameters:
 	max_features=500
@@ -50,9 +52,9 @@ o	Parameters:
 	stop_words='english'
 •	Encoded target labels (Category) using scikit-learn's LabelEncoder.
 
-##Model Documentation
+## Model Documentation
 
-###Model Selection Logic
+### Model Selection Logic
 We trained the following models to classify transactions:
 1.	Random Forest:
 o	Strengths: Handles high-dimensional data well, robust to overfitting.
@@ -78,7 +80,7 @@ o	Hyperparameters:
 	Kernel: Linear
 	random_state=42
 
-###Model Evaluation
+### Model Evaluation
 •	Metrics Used:
 o	Accuracy
 o	Precision, Recall, and F1 Score
@@ -86,7 +88,7 @@ o	Precision, Recall, and F1 Score
 o	Selected based on the highest F1 score.
 o	Saved the model pkl file using joblib.
 
-###Error Analysis
+### Error Analysis
 •	Techniques:
 o	Generated confusion matrices to identify misclassified categories.
 o	Analyzed incorrect predictions to identify patterns and improve features.
